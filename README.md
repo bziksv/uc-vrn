@@ -22,25 +22,21 @@
 ## Структура репозитория
 
 ```
-uc-vrn/
+uc-vrn/                       # DOCUMENT_ROOT сайта (= public_html)
 ├── README.md                 # эта документация
 ├── .gitignore
-├── ucvrn_new.sql             # дамп БД (не коммитить)
-└── ucvrn/                    # DOCUMENT_ROOT сайта
-    ├── index.php             # главная
-    ├── .htaccess             # ЧПУ, 301 со старых URL, блокировка IP
-    ├── urlrewrite.php        # SEF-маршруты инфоблоков
-    ├── include/              # редактируемые области (телефон, адрес, тексты)
-    ├── local/                # кастомный код и шаблон
-    ├── bitrix/               # ядро и модули CMS
-    ├── upload/               # загруженные файлы
-    ├── o-kompanii/           # о компании, новости, документы, преподаватели
-    ├── obuchenie/            # каталог программ обучения
-    ├── distantsionnoe-obuchenie/
-    ├── otzyvy-i-klienty/
-    ├── kontakty/
-    ├── legal/                # согласия, cookies, персональные данные
-    └── ...
+├── index.php                 # главная
+├── .htaccess                 # ЧПУ, 301 со старых URL, блокировка IP
+├── urlrewrite.php            # SEF-маршруты инфоблоков
+├── include/                  # редактируемые области (телефон, адрес, тексты)
+├── local/                    # кастомный код и шаблон
+├── bitrix/                   # ядро и модули CMS
+├── upload/                   # загруженные файлы
+├── o-kompanii/               # о компании, новости, документы, преподаватели
+├── obuchenie/                # каталог программ обучения
+├── legal/                    # согласия, cookies, персональные данные
+├── scripts/                  # локальный стенд
+└── ucvrn_new.sql             # дамп БД (не коммитить)
 ```
 
 ## Разделы сайта
@@ -99,7 +95,7 @@ uc-vrn/
 
 ## Шаблон `juno`
 
-Путь: `ucvrn/local/templates/juno/`
+Путь: `local/templates/juno/`
 
 - `header.php` / `footer.php` — вёрстка, меню, контакты из `include/`
 - `css/` — `main.css`, `custom.css`, `responsive.css`, Slick, Fancybox
@@ -113,11 +109,11 @@ uc-vrn/
 - `news.list`: `mainPageLearnSpec`, `newsListSlider`, `FAQ`, `docs`, `founders`, `lastNews` и др.
 - `menu`: `topMenu`, `topMenuMobile`, `aboutMenu`, футерные меню
 
-Тексты шапки, подвала и главной правятся через `bitrix:main.include` из `ucvrn/include/`.
+Тексты шапки, подвала и главной правятся через `bitrix:main.include` из `include/`.
 
 ## Формы заявок
 
-Файлы: `ucvrn/local/templates/juno/forms/`
+Файлы: `local/templates/juno/forms/`
 
 | Файл | Назначение |
 |------|------------|
@@ -135,9 +131,11 @@ uc-vrn/
 
 Почта идёт через модуль `wsrubi.smtp` (подключается в `bitrix/php_interface/init.php`).
 
+Заявки защищены honeypot и **Яндекс SmartCaptcha**. Ключи (клиентский + серверный) лежат в `local/php_interface/smartcaptcha.keys.php` (не в git). Пока ключи пустые, виджет не показывается, сервер капчу не проверяет. В консоли SmartCaptcha в разрешённые домены добавить `uc-vrn.ru`, `127.0.0.1`, `localhost`.
+
 ## Кастомный PHP
 
-`ucvrn/local/php_interface/init.php` подключает `functions.php`.
+`local/php_interface/init.php` подключает `functions.php`.
 
 Полезные функции: `getElementById`, `getElemensList`, `getElemensList2`, `getSectionById`, `getIblockSections`, `getResizeImgSrc`, `getPhoneLink`, `getFileIco`, `getFileSize`, `detectMobile`, `dump` (только с конкретного IP).
 
@@ -155,11 +153,11 @@ uc-vrn/
 
 | Файл | Что внутри |
 |------|------------|
-| `ucvrn/bitrix/.settings.php` | логин/пароль БД, `crypto_key` |
-| `ucvrn/bitrix/.settings_extra.php` | доп. настройки ядра (если есть) |
-| `ucvrn/bitrix/php_interface/dbconn.php` | подключение к БД (legacy) |
-| `ucvrn/bitrix/php_interface/after_connect_d7.php` | SQL после коннекта |
-| `ucvrn/bitrix/license_key.php` | лицензионный ключ Битрикс |
+| `bitrix/.settings.php` | логин/пароль БД, `crypto_key` |
+| `bitrix/.settings_extra.php` | доп. настройки ядра (если есть) |
+| `bitrix/php_interface/dbconn.php` | подключение к БД (legacy) |
+| `bitrix/php_interface/after_connect_d7.php` | SQL после коннекта |
+| `bitrix/license_key.php` | лицензионный ключ Битрикс |
 | `*.sql` | дампы БД |
 
 В текущем `.settings.php` заданы:
@@ -175,7 +173,7 @@ uc-vrn/
 ## Локальный запуск
 
 1. PHP 8.3+, MySQL, Apache/Nginx с `mod_rewrite`.
-2. Document root указать на `ucvrn/`.
+2. Document root указать на корень репозитория.
 3. Создать БД и импортировать дамп:
 
 ```bash
@@ -215,7 +213,7 @@ Document root на хостинге (Beget):
 /new.uc-vrn.ru/public_html
 ```
 
-Локальная папка `ucvrn/` соответствует этому каталогу на сервере.
+Корень репозитория соответствует этому каталогу на сервере.
 
 Репозиторий: [https://github.com/bziksv/uc-vrn](https://github.com/bziksv/uc-vrn)
 

@@ -6,22 +6,22 @@
 !.env.example
 
 # Bitrix: БД, crypto_key, параметры подключения
-ucvrn/bitrix/.settings.php
-ucvrn/bitrix/.settings_extra.php
-ucvrn/bitrix/php_interface/dbconn.php
-ucvrn/bitrix/php_interface/after_connect.php
-ucvrn/bitrix/php_interface/after_connect_d7.php
-ucvrn/bitrix/php_interface/after_connect_d7.bak.php
+bitrix/.settings.php
+bitrix/.settings_extra.php
+bitrix/php_interface/dbconn.php
+bitrix/php_interface/after_connect.php
+bitrix/php_interface/after_connect_d7.php
+bitrix/php_interface/after_connect_d7.bak.php
 
 # Лицензионный ключ 1С-Битрикс
-ucvrn/bitrix/license_key.php
+bitrix/license_key.php
 
 # Ключи, сертификаты, учётные данные
 *.pem
 *.p12
 *.pfx
 *.key
-!ucvrn/local/templates/**/*.key
+!local/templates/**/*.key
 id_rsa
 id_ed25519
 credentials.json
@@ -40,19 +40,19 @@ auth.json
 # =============================================================================
 # Кеш, логи, бэкапы, временные файлы Bitrix
 # =============================================================================
-ucvrn/bitrix/cache/
-ucvrn/bitrix/managed_cache/
-ucvrn/bitrix/stack_cache/
-ucvrn/bitrix/html_pages/
-ucvrn/bitrix/backup/
-ucvrn/bitrix/tmp/
-ucvrn/bitrix/updates/
-ucvrn/bitrix/*.log
-ucvrn/bitrix/modules/updater*.log
-ucvrn/upload/resize_cache/
-ucvrn/upload/tmp/
-ucvrn/upload/temp_zip/
-ucvrn/log.txt
+bitrix/cache/
+bitrix/managed_cache/
+bitrix/stack_cache/
+bitrix/html_pages/
+bitrix/backup/
+bitrix/tmp/
+bitrix/updates/
+bitrix/*.log
+bitrix/modules/updater*.log
+upload/resize_cache/
+upload/tmp/
+upload/temp_zip/
+log.txt
 
 # =============================================================================
 # ОС и IDE
@@ -74,10 +74,11 @@ Desktop.ini
 # Прочее
 # =============================================================================
 # Локальный стенд
-ucvrn/.local/run/
-ucvrn/.local/backup/
-ucvrn/.local/db.env
-ucvrn/bitrix/php_interface/dbconn.local.php
+.local/run/
+.local/backup/
+.local/db.env
+bitrix/php_interface/dbconn.local.php
+local/php_interface/smartcaptcha.keys.php
 
 *.local
 *.bak

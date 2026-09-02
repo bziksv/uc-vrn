@@ -45,6 +45,11 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
 	Options +FollowSymLinks
 	RewriteEngine On
+
+	# Служебные файлы репозитория в document root
+	RewriteRule ^(\.git|\.cursor|\.local)(/|$) - [F,L]
+	RewriteRule ^(README\.md|\.gitignore|\.cursorignore)$ - [F,L]
+	RewriteRule ^scripts(/|$) - [F,L]
 	
 	# 301 --- old => new
 	RewriteRule ^about/$ /o\-kompanii/? [L,R=301]
