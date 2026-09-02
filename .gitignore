@@ -1,0 +1,87 @@
+# =============================================================================
+# Секреты и конфиги с паролями
+# =============================================================================
+.env
+.env.*
+!.env.example
+
+# Bitrix: БД, crypto_key, параметры подключения
+ucvrn/bitrix/.settings.php
+ucvrn/bitrix/.settings_extra.php
+ucvrn/bitrix/php_interface/dbconn.php
+ucvrn/bitrix/php_interface/after_connect.php
+ucvrn/bitrix/php_interface/after_connect_d7.php
+ucvrn/bitrix/php_interface/after_connect_d7.bak.php
+
+# Лицензионный ключ 1С-Битрикс
+ucvrn/bitrix/license_key.php
+
+# Ключи, сертификаты, учётные данные
+*.pem
+*.p12
+*.pfx
+*.key
+!ucvrn/local/templates/**/*.key
+id_rsa
+id_ed25519
+credentials.json
+secrets.json
+auth.json
+*.secret
+*secret*
+
+# Дампы БД (содержат хеши паролей, персональные данные, ключи)
+*.sql
+*.sql.gz
+*.sql.bz2
+*.sql.zip
+*.dump
+
+# =============================================================================
+# Кеш, логи, бэкапы, временные файлы Bitrix
+# =============================================================================
+ucvrn/bitrix/cache/
+ucvrn/bitrix/managed_cache/
+ucvrn/bitrix/stack_cache/
+ucvrn/bitrix/html_pages/
+ucvrn/bitrix/backup/
+ucvrn/bitrix/tmp/
+ucvrn/bitrix/updates/
+ucvrn/bitrix/*.log
+ucvrn/bitrix/modules/updater*.log
+ucvrn/upload/resize_cache/
+ucvrn/upload/tmp/
+ucvrn/upload/temp_zip/
+ucvrn/log.txt
+
+# =============================================================================
+# ОС и IDE
+# =============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# =============================================================================
+# Прочее
+# =============================================================================
+# Локальный стенд
+ucvrn/.local/run/
+ucvrn/.local/backup/
+ucvrn/.local/db.env
+ucvrn/bitrix/php_interface/dbconn.local.php
+
+*.local
+*.bak
+*.orig
+*.tmp
+composer.phar
+node_modules/

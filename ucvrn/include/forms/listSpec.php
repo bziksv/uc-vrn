@@ -1,0 +1,10 @@
+<div class="drop_select_item">Охрана труда</div>
+<div class="drop_select_item">Работа на высоте</div>
+<div class="drop_select_item">Пожарная безопасность</div>
+<div class="drop_select_item">электробезопасность</div>
+<div class="drop_select_item">Водитель погрузчика</div>
+<div class="drop_select_item">Тракторист</div>
+<div class="drop_select_item">ДОПОГ (перевозка опасных грузов)</div>
+<div class="drop_select_item">Стропальщик</div>
+<div class="drop_select_item">Машинист крана</div>
+<div class="drop_select_item">Машинист вышки (подъемника)</div>

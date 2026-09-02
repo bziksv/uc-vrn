@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Сведения об учредителях", 
+		"/o-kompanii/svedeniya-ob-uchreditelyakh/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Структура и органы управления", 
+		"/o-kompanii/struktura-i-organy-upravleniya/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Документы", 
+		"/o-kompanii/dokumenty/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		"/o-kompanii/novosti/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Статьи", 
+		"/o-kompanii/statyi/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Вопрос-ответ", 
+		"/o-kompanii/vopros-otvet/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Преподаватели", 
+		"/o-kompanii/prepodavateli/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

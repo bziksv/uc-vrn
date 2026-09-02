@@ -1,0 +1,6 @@
+<?
+$sSectionName = "cookies";
+$arDirProperties = array(
+
+);
+?>

@@ -1,0 +1,1 @@
+<a href="/upload/recvizity.pdf" target="_blank">Реквизиты организации (pdf, 1.7 Мб)</a>

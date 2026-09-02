@@ -1,0 +1,624 @@
+.logo_mobile{
+    display: none;
+}
+.header_menu_mobile.active .mobile_menu_btn_close{
+    display: inline-block;
+}
+@media(max-width: 1350px){
+    .header_logo .logo_mobile{
+        display: block;
+    }
+    .header_logo .logo_dt{
+        display: none;
+    }
+    .header_menu{
+        width: 100%;
+        margin-left: 50px;
+    }
+    .footer_content-wr{
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    .main_specialties_content {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+    }
+    .news_item-main-wr .news_item_img img{
+        height: 100%;
+    }
+    .news_item-main-wr .news_item_img img[src="/local/templates/juno/img/noPhoto.png"]{
+        height: auto;
+    }
+    .about-advantages_content {
+        grid-template-columns: 1fr 1fr;
+    }
+    .news_list_container .news_item{
+        width: 100%; 
+        margin: 0;
+    }
+    #requestEduPopup.question-form.form_popup {
+        padding: 40px;
+    }
+    #requestEduPopup.question-form.form_popup .left_side {
+        width: 100%;
+        padding-right: 0;
+        max-width: 100%;
+    }
+    #requestEduPopup.question-form label[for^="agreement"] {
+        /*        width: calc(100% - 186px);*/
+        /*max-width: 400px;*/
+        width: 100%;
+        max-width: 100%;
+    }
+}
+@media(max-width: 1240px){
+    .main_specialties_content {
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
+    .question-form_content{
+        flex-wrap: wrap;
+    }
+    .question-form_content .question-form_desc{
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .question-form_content .question-form_btn{
+        margin-top: 30px;
+    }
+    .question-form-wr{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+    }
+    .news_list_container .news_item{
+        min-height: 33vw;
+    }
+    .question-form-wr_big{
+        grid-gap: 30px;
+    }
+    .question-form-wr_big .left_side {
+        max-width: 100%;
+        padding-right: 0;
+        width: 100%;
+    }
+    #question .question-form-wr{
+        display: flex;
+    }
+    #requestEduPopup .question-form-wr {
+        grid-gap: 40px;
+    }
+}
+@media(max-width: 1100px){
+    .title, .h1, .title.h1, h1{
+        font-size: 32px!important;
+    }
+    .header_top{
+        display: none;
+    }
+    .header_menu{
+        display: none;
+    }
+    .header_menu_mobile{
+        display: block;
+    }
+    .header_logo .logo_mobile{
+        display: none;
+    }
+    .header_logo .logo_dt{
+        display: block;
+    }
+    .mobile_menu_btn{
+        display: block;
+    }
+    .main-banner_content_title{
+        font-size: 38px;
+    }
+    .title, .h2, .title.h2, .form_title, .question-form_title{
+        font-size: 32px;
+    }
+    .programm-item_title {
+        font-size: 20px;
+    }
+    .main-news_slider-wr{
+        width: 100%;
+    }
+    .about-advantages .container {
+        grid-template-columns: 1fr;
+    }
+    .faq_item .faq_title{
+        line-height: 35px;
+    }
+    .founders_container .founders_item>div{
+        margin-bottom: 15px;
+    }
+    .teacher_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 40px 20px;
+    }
+    .teacher_container .teacher_item {
+        margin-bottom: 0;
+    }
+    .teacher_container .teacher_item:nth-child(odd){
+        margin-right: 0;
+    }
+    #requestEduPopup.question-form input[type="tel"] {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    #requestEduPopup.question-form input[type="email"] {
+        max-width: 100%;
+    }
+}
+@media(max-width: 980px){
+    .main_specialties_content {
+        grid-template-columns: 1fr 1fr; 
+    }
+    .about_about-uc {
+        grid-template-columns: 1fr;
+        padding: 50px 40px;
+    }
+    .news_list_container .news_item .news_date{
+        bottom: 25px;
+    }
+    .news_top .news_top_title{
+        font-size: 32px;
+        margin: 80px 0 30px;
+    }
+    .teacher_container .teacher_item .teacher_info .teacher_name {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .learning_props .left_side{
+        width: 100%;
+        position: relative;
+    }
+    .learning_props .right_side{
+        width: 100%;
+        padding-left: 0;
+    }
+}
+@media(max-width: 910px){
+    .main-banner_content-wr{
+        display: block;
+    }
+    .main-banner_content-wr .main-banner_more{
+        margin-bottom: 30px;
+    }
+    .main-banner_content{
+        max-width: none;
+    }
+    .main-banner_programm-item a{
+        justify-content: space-between;
+    }
+    .main-banner_programm-item{
+        margin-bottom: 20px;
+    }
+    .main-banner_content_note{
+        margin-top: 20px;
+    }
+    .title, .h2, .title.h2, .form_title{
+        font-size: 24px;
+    }
+    .main-programm_content {
+        grid-template-columns: 1fr;
+    }
+    .main-programm_content-wr.flex .programm-item:last-of-type{
+        margin-right: 0;
+    }
+    .main-programm_content-wr.flex{
+        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .question-form-wr{
+        display: block;
+    }
+    .question-form-wr .left_side{
+        max-width: none;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    .question-form_content form{
+        width: 100%;
+    }
+    .contacts .contacts_content{
+        grid-template-columns: 1fr 1fr;
+        justify-items: start;
+        grid-gap: 30px;
+        margin-top: 20px;
+    }
+    .news_list_container .other_list {
+        grid-template-columns: 1fr 1fr;
+    }
+    .news_list_container .news_item {
+        min-height: 38vw;
+    }
+    .teacher_container .teacher_item img {
+        margin: 0 25px 40px 0;
+    }
+    .teacher_container .teacher_item>img{
+        width: 150px;
+        height: 150px;
+    }
+    .teacher_container .teacher_item .teacher_info {
+        flex-basis: calc(100% - 175px);
+    }
+    .propgram_list_desc .property_item {
+        width: auto;
+        min-width: 180px;
+        margin-bottom: 20px;
+    }
+    #requestEduPopup.question-form input[type="tel"] {
+        max-width: 33%;
+        margin-right: 20px;
+    }
+    #requestEduPopup.question-form input[type="email"] {
+        max-width: calc(66% - 20px);
+    }
+}
+@media(max-width: 800px){
+    .about-desc {
+        grid-template-columns: 1fr;
+        margin-bottom: 50px;
+    }
+}
+@media(max-width: 780px){
+    .teacher_container {
+        grid-template-columns: 1fr;
+    }
+    .docs_container .document_item img{
+        display: none;
+    }
+    .docs_container .document_item .file_name {
+        font-size: 18px;
+        line-height: 25px;
+        padding: 0 30px;
+        padding-left: 0;
+    }
+    .docs_container .document_item {
+        padding: 25px 30px;
+    }
+}
+@media(max-width: 760px){
+    .main-banner_content_title{
+        font-size: 28px;
+    }
+    .programm-item_title {
+        font-size: 18px;
+    }
+    .news_item-wr{
+        padding: 20px;
+    }
+    .news_item-main-wr .news_item_date{
+        left: 20px;
+    }
+    .footer_bottom{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    section{
+        padding: 70px 0;
+    }
+    .news_list_container .news_item .news_date {
+        bottom: 35px;
+    }
+    .news_list_container .first_news_item img {
+        object-fit: cover;
+        min-height: 300px;
+    }
+    .faq_item .faq_title{
+        font-size: 20px;
+        line-height: 28px;
+    }
+    #callback.question-form, #question.question-form{
+        padding: 40px;
+    }
+    .news_list_container .news_item {
+        min-height: 42vw;
+    }
+}
+@media(max-width: 640px){
+    .breadcrumb-wr {
+        padding: 25px 0;
+    }
+    .breadcrumb {
+        margin-bottom: 15px;
+    }
+    /*    .contacts_content_item {
+            margin-bottom: 0;
+        }*/
+    .main_specialties_content {
+        grid-template-columns: 1fr; 
+    }
+    .specialties_item a{
+        min-height: auto;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: 1fr 8fr;
+        grid-gap: 30px;
+    }
+    .footer_content-wr {
+        grid-template-columns: 1fr;
+    }
+    .contacts .contacts_content{
+        grid-template-columns: 1fr;
+        grid-gap:0;
+    }
+    .contacts .contacts_content .contacts_content_item{
+        margin-bottom: 35px;
+    }
+    .footer_content-wr .footer_item:last-of-type{
+        display: none;
+    }
+    .about-advantages_content {
+        grid-gap: 30px 30px;
+    }
+    .about-advantages_content_item_img {
+        margin-bottom: 15px;
+    }
+    .tab_value_container .tab_value_item a.doc_item {
+        padding: 25px 30px;
+    }
+    .tab_value_item .doc_item img{
+        display: none;
+    }
+    .tab_value_container .tab_value_item a.doc_item .file_name{
+        font-size: 18px;
+        line-height: 25px;
+        padding: 0 30px;
+        padding-left: 0;
+    }
+    .news_list_container .other_list {
+        grid-template-columns: 1fr;
+    }
+    .news_list_container .news_item .preview_img {
+        height: 38vw;
+    }
+    .news_list_container .news_item {
+        min-height: 60vw;
+    }
+    .news_list_container .news_item{
+        padding-bottom: 70px;
+        min-height: auto;
+    }
+    .news_list_container .news_item .news_title{
+        max-height: none;
+    }
+    .faq_item {
+        padding: 35px 25px;
+    }
+    .faq_item.active .faq_text {
+        margin-top: 25px;
+        padding-top: 15px;
+    }
+    .white_container {
+        padding: 35px 30px;
+        margin-bottom: 80px;
+    }
+    .description_text{
+        padding: 30px;
+        margin: 20px 0;
+    }
+    .description_text.learning_props{
+        margin: 70px 0;
+        padding-top: 55px;
+    }
+    .sub_title {
+        margin-top: 40px;
+    }
+    .text_container h1{
+        padding-right: 0;
+        line-height: 42px;
+    }
+    .description_text .print_btn {
+        top: 7px;
+    }
+    #question.question-form input[type="tel"] {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    #question.question-form input[type="email"] {
+        max-width: 100%;
+    }
+    #requestEduPopup.question-form input[type="tel"] {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    #requestEduPopup.question-form input[type="email"] {
+        max-width: 100%;
+    }
+    .main-news_controls_btns{
+        display: none;
+    }
+    .main-banner_content_desc{
+        display: none;
+    }
+    .main-banner_content_title {
+        margin-bottom: 35px;
+    }
+    .news_list_container .other_list .news_item .news_title {
+        padding-bottom: 15px;
+    }
+}
+@media(max-width: 560px){
+    .main-programm_content-wr.flex{
+        grid-template-columns: 1fr;
+    }
+    .main-programm_content-wr.flex .programm-item{
+        margin-right: 0;
+    }
+    .programm-item_wr{
+        display: flex;
+        width: 100%;
+    }
+    .programm-item a .programm-item_nmb {
+        margin-right: 10px;
+    }
+    .programm-item.blue a, .programm-item a{
+        min-height: auto;
+        padding: 25px 30px;
+    }
+    .programm-item a svg, .programm-item a img{
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        z-index: 0;
+        max-width: 175px;
+        margin: 0!important;
+        max-height: 80%;
+    }
+    .question-form label[for^="agreement"]{
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .main-news_controls-wr{
+        flex-wrap: wrap;
+    }
+    .footer_bottom{
+        grid-template-columns: 1fr;
+    }
+    .footer_bottom_privacy_policy a{
+        padding: 10px 0;
+    }
+    .about_about-uc_links a{
+        font-size: 18px;
+    }
+    .about-advantages_content {
+        grid-template-columns: 1fr;
+    }
+    .news_item_container {
+        padding: 35px 30px;
+    }
+    .text_container p, .text_container ul li, .text_container ol li {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .founders_container .founders_item {
+        padding: 20px 25px;
+    }
+    .managmvent_container {
+        padding: 25px 20px;
+        margin-bottom: 80px;
+    }
+    .tab_value_container .tab_value_item a.propgram_list_desc {
+        padding: 35px 30px;
+    }
+    .learning_props .left_side .title{
+        line-height: 40px;
+    }
+    .learning_props .learning_group_prop {
+        padding: 20px 0;
+    }
+    .learning_props .learning_group_prop .prop_title {
+        font-size: 19px;
+        line-height: 24px;
+    }
+    .learning_props .learning_group_prop .prop_val {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .main-programm_content .programm-item a{
+        min-height: 150px;
+    }
+}
+@media(max-width: 480px){
+    .question-form input[type="tel"], 
+    .question-form input[type="email"]{
+        max-width: 100%;
+    }
+    .tab_value_container .tab_value_item a.doc_item{
+        flex-wrap: wrap;
+    }
+    .tab_value_container .tab_value_item a.doc_item .file_name{
+        margin-bottom: 16px;
+        padding: 0;
+    }
+}
+@media(max-width: 460px){
+    .specialties_item a {
+        grid-template-columns: 1fr;
+    }
+    .news_list_container .first_news_item .news_title {
+        font-size: 20px;
+        line-height: 27px;
+    }
+    .news_list_container .first_news_item .first_news_desc {
+        padding: 30px 35px;
+    }
+    .news_list_container .news_item .news_title {
+        padding: 20px 30px;
+    }
+    .news_list_container .news_item .news_date {
+        left: 30px;
+    }
+    .faq_item .faq_btn, .faq_item .faq_btn:before {
+        width: 30px;
+        height: 30px;
+    }
+    .teacher_container .teacher_item .teacher_info {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
+    .teacher_container .teacher_item img {
+        margin: 0 25px 15px 0;
+    }
+    .teacher_container {
+        grid-gap: 20px 20px;
+    }
+    .description_text .print_btn{
+        position: relative;
+        margin-bottom: 15px;
+    }
+    .docs_container .document_item {
+        flex-wrap: wrap;
+    }
+    .docs_container .document_item .file_name {
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+    .docs_container .document_item>span {
+        flex-basis: 100%;
+    }
+}
+@media(max-width: 440px){
+    .header_logo .logo_dt{
+        display: none;
+    }
+    .header_logo .logo_mobile{
+        display: block;
+    }
+    .tab_value_container .tab_value_item a.propgram_list_desc {
+        padding: 35px 20px;
+    }
+    .learning_props .learning_group_prop .prop_title {
+        width: 100%;
+        margin-bottom: 15px;
+        padding-right: 0;
+    }
+    .learning_props .learning_group_prop .prop_val {
+        width: 100%;
+    }
+    .docs_title_container {
+        flex-wrap: wrap;
+    }
+    .docs_title_container>div{
+        flex-basis: 100%;
+    }
+    .docs_title_container .title{
+        margin-bottom: 15px;
+    }
+    #requestEduPopup.question-form.form_popup {
+        padding: 20px;
+    }
+}
+@media(max-width: 400px){
+    .header_search_btn_mobile{
+        margin-left: 34vw;
+        margin-right: 15px;
+    }
+    .search_form_container .close_form_search {
+        right: 0;
+    }
+}

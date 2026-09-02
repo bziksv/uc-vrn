@@ -1,0 +1,1 @@
+<img src="/local/templates/juno/img/1.svg" alt="">

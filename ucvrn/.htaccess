@@ -1,0 +1,131 @@
+<RequireAll>
+    Require all granted
+
+    Require not ip 49.13.193.0/24
+    Require not ip 5.139.230.0/24
+    Require not ip 5.139.253.0/24
+    Require not ip 31.181.248.0/24
+    Require not ip 37.18.38.0/24
+    Require not ip 37.77.111.0/24
+    Require not ip 45.140.18.0/24
+    Require not ip 62.183.46.0/24
+    Require not ip 77.110.108.0/24
+    Require not ip 83.239.97.0/24
+    Require not ip 85.172.109.0/24
+    Require not ip 85.174.205.0/24
+    Require not ip 85.175.197.0/24
+    Require not ip 85.175.217.0/24
+    Require not ip 91.233.43.0/24
+    Require not ip 95.153.163.0/24
+    Require not ip 95.153.177.0/24
+    Require not ip 95.153.178.0/24
+    Require not ip 95.153.180.0/24
+    Require not ip 95.25.184.0/24
+    Require not ip 178.176.211.0/24
+    Require not ip 185.10.173.0/24
+    Require not ip 188.162.140.0/24
+    Require not ip 188.162.143.0/24
+    Require not ip 188.170.169.0/24
+    Require not ip 217.78.231.0/24
+</RequireAll>
+
+
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+<IfModule mod_php5.c>
+	php_flag allow_call_time_pass_reference 1
+	php_flag session.use_trans_sid off
+
+	#php_value display_errors 1
+
+	#php_value mbstring.internal_encoding UTF-8
+</IfModule>
+
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+	RewriteEngine On
+	
+	# 301 --- old => new
+	RewriteRule ^about/$ /o\-kompanii/? [L,R=301]
+	RewriteRule ^about/documentation/$ /o\-kompanii/dokumenty/? [L,R=301]
+	RewriteRule ^about/licenzii/$ /o\-kompanii/dokumenty/? [L,R=301]
+	RewriteRule ^about/mto/$ /o\-kompanii/dokumenty/? [L,R=301]
+	RewriteRule ^about/polozheniya/$ /o\-kompanii/dokumenty/? [L,R=301]
+	RewriteRule ^about/struktura\-i\-organy\-upravleniya/$ /o\-kompanii/struktura\-i\-organy\-upravleniya/? [L,R=301]
+	RewriteRule ^about/svedeniya\-ob\-uchreditelyakh/$ /o\-kompanii/svedeniya\-ob\-uchreditelyakh/? [L,R=301]
+	RewriteRule ^contacts/$ /kontakty/? [L,R=301]
+	RewriteRule ^news/$ /o\-kompanii/novosti/? [L,R=301]
+	RewriteRule ^news/344/$ /o\-kompanii/novosti/tekhnosfernaya\-bezopasnost/? [L,R=301]
+	RewriteRule ^news/43/$ /o\-kompanii/novosti/izmeritelnye\-materialy\-dlya\-ege\-snabdyat\-nevidimymi\-elementami\-zashchity/? [L,R=301]
+	RewriteRule ^news/44/$ /o\-kompanii/novosti/zadaniya\-ege\-napravleny\-na\-kreativnykh\-detey\-zayavlyayut\-razrabotchiki/? [L,R=301]
+	RewriteRule ^news/45/$ /o\-kompanii/novosti/shkolniki\-podali\-svyshe\-80\-tysyach\-apellyatsiy\-po\-rezultatam\-ege/? [L,R=301]
+	RewriteRule ^news/46/$ /o\-kompanii/novosti/okolo\-16\-5\-tysyach\-rossiyskikh\-vypusknikov\-ne\-sdali\-obyazatelnyy\-ege/? [L,R=301]
+	RewriteRule ^news/46157/$ /o\-kompanii/novosti/seminar\-sposoby\-i\-poryadok\-opredeleniya\-i\-rascheta\-professionalnykh\-riskov\-na\-predpriyatii/? [L,R=301]
+	RewriteRule ^news/47/$ /o\-kompanii/novosti/nachalo\-obuchenie\-po\-spetsialnosti\-traktorist/? [L,R=301]
+	RewriteRule ^news/70/$ /o\-kompanii/novosti/vstupil\-v\-silu\-zakon\-ogranichivayushchiy\-potreblenie\-tabaka\-na\-territorii\-rossiyskoy\-federatsii/? [L,R=301]
+	RewriteRule ^news/83/$ /o\-kompanii/novosti/s\-1\-ogo\-sentyabrya\-2013\-g\-vstupaet\-v\-silu\-novyy\-zakon\-ob\-obrazovanii/? [L,R=301]
+	RewriteRule ^news/842/$ /o\-kompanii/novosti/vnimanie/? [L,R=301]
+	RewriteRule ^news/933/$ /o\-kompanii/novosti/vserossiyskiy\-konkurs\-na\-luchshuyu\-organizatsiyu\-rabot\-v\-oblasti\-usloviy\-i\-okhrany\-truda\-uspekh\-i\-be/? [L,R=301]
+	RewriteRule ^obuchenie/prepodavatelskij_sostav/$ /o\-kompanii/prepodavateli/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/$ /obuchenie/drugie\-rabochie\-spetsialnosti/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/armaturshhik/$ /obuchenie/drugie\-rabochie\-spetsialnosti/armaturshchik/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/jelektromonter/$ /obuchenie/drugie\-rabochie\-spetsialnosti/elektromonter\-po\-remontu\-i\-obsluzhivaniyu\-elektrooborudovaniya/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/kamenshhik/$ /obuchenie/drugie\-rabochie\-spetsialnosti/kamenshchik/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/maljar_shtukatur/$ /obuchenie/drugie\-rabochie\-spetsialnosti/shtukatur\-malyar/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/mashinist_krana/$ /obuchenie/drugie\-rabochie\-spetsialnosti/mashinist\-krana/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/mashinist_krana_manipuljatora/$ /obuchenie/drugie\-rabochie\-spetsialnosti/mashinist\-avtomobilnogo\-krana/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/mashinist_podemnika/$ /obuchenie/drugie\-rabochie\-spetsialnosti/mashinist\-avtovyshki\-i\-avtogidropodemnika/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/montazhnik_po_montazhu_konstrukcij/$ /obuchenie/drugie\-rabochie\-spetsialnosti/montazhnik\-zhb\-konstruktsii/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/ptm_dlja_rabotnikov/$ /obuchenie/pozharnaya\-bezopasnost/pozharno\-tekhnicheskiy\-minimum\-dlya\-rabochikh/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/ptm_dlja_rukovoditelej/$ /obuchenie/pozharnaya\-bezopasnost/povyshenie\-kvalifikatsii/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/stanochnik_derevoobrabatyvajushhih_stankov/$ /obuchenie/drugie\-rabochie\-spetsialnosti/stanochnik\-derevoobrabatyvayushchikh\-stankov/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/stropalshhik/$ /obuchenie/drugie\-rabochie\-spetsialnosti/stropalshchik/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/voditel_pogruzchika/$ /obuchenie/traktoristy\-voditeli\-pogruzchika/voditel\-pogruzchika/? [L,R=301]
+	RewriteRule ^obuchenie_po_jelektrobezopasnosti/$ /obuchenie/elektrobezopasnost/obuchenie\-po\-elektrobezopasnosti/? [L,R=301]
+	RewriteRule ^obuchenie_po_ohrane_truda/$ /obuchenie/okhrana\-truda/? [L,R=301]
+	RewriteRule ^obuchenie_po_ohrane_truda/obuchenie\-pravilam\-pri\-rabote\-na\-vysote/$ /obuchenie/okhrana\-truda/obuchenie\-pravilam\-po\-okhrane\-truda\-pri\-rabote\-na\-vysote/? [L,R=301]
+	RewriteRule ^pozharnaja_bezopasnost/$ /obuchenie/pozharnaya\-bezopasnost/? [L,R=301]
+	RewriteRule ^articles/$ /o\-kompanii/statyi/? [L,R=301]
+	RewriteRule ^articles/horoshij_kamenshhik_opora_vsego_stroitelstva/$ /o\-kompanii/statyi/horoshij_kamenshhik_opora_vsego_stroitelstva/? [L,R=301]
+	RewriteRule ^articles/kakim_dolzhen_byt_horoshij_kranovshhik/$ /o\-kompanii/statyi/kakim_dolzhen_byt_horoshij_kranovshhik/? [L,R=301]
+	RewriteRule ^articles/ob_ispolzovanii_avtopogruzchikov/$ /o\-kompanii/statyi/ob_ispolzovanii_avtopogruzchikov/? [L,R=301]
+	RewriteRule ^articles/obespechenie_bezopasnyh_uslovij_truda/$ /o\-kompanii/statyi/obespechenie_bezopasnyh_uslovij_truda/? [L,R=301]
+	RewriteRule ^articles/obespechenie_pozharnoj_bezopasnosti/$ /o\-kompanii/statyi/obespechenie_pozharnoj_bezopasnosti/? [L,R=301]
+	RewriteRule ^articles/obuchenie_jelektrotehnicheskogo_personala/$ /o\-kompanii/statyi/obuchenie_jelektrotehnicheskogo_personala/? [L,R=301]
+	RewriteRule ^articles/osobennosti_professii_jelektrogazosvarshhik/$ /o\-kompanii/statyi/osobennosti_professii_jelektrogazosvarshhik/? [L,R=301]
+	RewriteRule ^articles/osobennosti_professii_kranovshhika/$ /o\-kompanii/statyi/osobennosti_professii_kranovshhika/? [L,R=301]
+	RewriteRule ^articles/osobennosti_professii_mashinist_manipuljatora/$ /obuchenie/drugie\-rabochie\-spetsialnosti/mashinist\-avtomobilnogo\-krana/? [L,R=301]
+	RewriteRule ^articles/osobennosti_professii_shtukatur\-maljar/$ /o\-kompanii/statyi/osobennosti_professii_shtukatur\-maljar/? [L,R=301]
+	RewriteRule ^articles/osobennosti_professii_stropalshhik/$ /o\-kompanii/statyi/osobennosti_professii_stropalshhik/? [L,R=301]
+	RewriteRule ^articles/porjadok_provedenija_attestacii/$ /o\-kompanii/statyi/porjadok_provedenija_attestacii/? [L,R=301]
+	RewriteRule ^articles/praktichnaja_professija_vysokij_dohod/$ /o\-kompanii/statyi/praktichnaja_professija_vysokij_dohod/? [L,R=301]
+	RewriteRule ^articles/programma_obuchenija_promalpinizmu/$ /o\-kompanii/statyi/programma_obuchenija_promalpinizmu/? [L,R=301]
+	RewriteRule ^articles/ptm_dlja_rabotnikov/$ /o\-kompanii/statyi/ptm_dlja_rabotnikov/? [L,R=301]
+	RewriteRule ^articles/ptm_dlja_rukovoditelej/$ /o\-kompanii/statyi/ptm_dlja_rukovoditelej/? [L,R=301]
+	RewriteRule ^articles/rol_bashennogo_krana_v_stroitelstve/$ /o\-kompanii/statyi/rol_bashennogo_krana_v_stroitelstve/? [L,R=301]
+	RewriteRule ^articles/rol_podgotovki_po_pozharnoj_bezopasnosti/$ /o\-kompanii/statyi/rol_podgotovki_po_pozharnoj_bezopasnosti/? [L,R=301]
+	RewriteRule ^articles/shirokimi_shagami_v_budushhee/$ /o\-kompanii/statyi/shirokimi_shagami_v_budushhee/? [L,R=301]
+	RewriteRule ^articles/specialist_po_ohrane_truda/$ /o\-kompanii/statyi/specialist_po_ohrane_truda/? [L,R=301]
+	RewriteRule ^articles/sposoby_podgotovki_po_ohrane_truda/$ /o\-kompanii/statyi/sposoby_podgotovki_po_ohrane_truda/? [L,R=301]
+	RewriteRule ^obuchenie\-voditeley\-po\-perevozke\-opasnykh\-gruzov/$ /obuchenie/dopog/? [L,R=301]
+	RewriteRule ^obuchenie/spisok_professij/traktorist/$ /obuchenie/traktoristy-voditeli-pogruzchika/? [L,R=301]	
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-l
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+	RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+</IfModule>
+
+<IfModule mod_dir.c>
+	DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+	ExpiresActive on
+	ExpiresByType image/jpeg "access plus 3 day"
+	ExpiresByType image/gif "access plus 3 day"
+</IfModule>
