@@ -1,0 +1,15 @@
+---
+description: Правки шаблона juno, форм и include-областей
+globs: local/templates/juno/**,include/**,index.php
+alwaysApply: false
+---
+
+# Шаблон juno
+
+- Стили: `css/custom.css` и `css/responsive.css` для точечных правок; `main.css` — базовая вёрстка
+- JS сайта: `js/script.js` (jQuery, Slick, Fancybox, masked input уже подключены в `header.php`)
+- Формы: HTML в `forms/*.php`, отправка только через `forms/ajax_sendForm.php` (honeypot + Яндекс SmartCaptcha + согласие + ИБ 13)
+- Ключи капчи: `local/php_interface/smartcaptcha.keys.php` (не в git)
+- Контакты и тексты — `bitrix:main.include` из `include/`, не зашивать телефон/адрес в шаблон
+- Short open tags `<?` в шаблоне допустимы (php-fpm включает `short_open_tag`)
+- Не дублировать компоненты: сначала смотреть `components/bitrix/news*`, `menu`, `news.list`

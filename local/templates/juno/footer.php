@@ -140,7 +140,8 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/local/templates/juno/forms/searchPopup.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/local/templates/juno/forms/requestCallPopup.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/local/templates/juno/forms/requestEduPopup.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/local/templates/juno/forms/requestQuestionPopup.php'
+require_once $_SERVER['DOCUMENT_ROOT'] . '/local/templates/juno/forms/requestQuestionPopup.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/local/templates/juno/forms/smartcaptcha.php';
 ?>
 <div class="preloader_raba"></div>
 

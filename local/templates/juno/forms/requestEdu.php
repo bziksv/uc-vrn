@@ -30,9 +30,9 @@
                                 ?>
                             </div>
                         </div>
-                        <input type="checkbox" required id="agreement1" name="agreement" style="display: none">
+                        <input type="checkbox" id="agreement1" name="agreement" style="display: none">
                         <label for="agreement1">
-							<span>Нажимая кнопку «Отправить», я даю <a href="/legal/consent/" target="_blank">согласие</a> на обработку моих персональных данных в соответствии с нашей <a href="/legal/personal-data/" target="_blank">политикой обработки персональных данных</a></span>
+                            <span>Нажимая кнопку «Отправить», я даю <a href="/legal/consent/" target="_blank">согласие</a> на обработку моих персональных данных в соответствии с нашей <a href="/legal/personal-data/" target="_blank">политикой обработки персональных данных</a></span>
                         </label>
                         <button type="submit">Отправить</button>
                     </form>

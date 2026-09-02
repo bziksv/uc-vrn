@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Правила применения рекомендат
 			<strong>Правила применения рекомендательных технологий АНО ДПО «ЦЧР УЧЕБНЫЙ ЦЕНТР»</strong>
 		</p>
 		<p class="legal-doc__related">
-			Связанные документы: <a target="_blank" href="/legal/personal-data/">Политика обработки персональных данных</a>, <a target="_blank" href="/legal/consent">Согласие на обработку персональных данных</a>, <a target="_blank" href="/legal/cookie/">Политика использования cookie-файлов</a>.
+			Связанные документы: <a target="_blank" href="/legal/personal-data/">Политика обработки персональных данных</a>, <a target="_blank" href="/legal/consent/">Согласие на обработку персональных данных</a>, <a target="_blank" href="/legal/cookie/">Политика использования cookie-файлов</a>.
 		</p>
 		<p>
 			1. Автономная некоммерческая организация дополнительного профессионального образования "Центрально-Черноземный Учебный Центр" (ИНН: 3663999022, адрес: 394033 г. Воронеж, Ленинский пр-т, д. 119А, лит 5А, оф 141), далее – АНО ДПО, является владельцем сайта <a href="https://uc-vrn.ru/" target="_blank" rel="noopener">https://uc-vrn.ru/</a> («Сайт»).
@@ -55,8 +55,8 @@ $APPLICATION->SetTitle("Правила применения рекомендат
 			Для привлечения посетителей на страницы Сайта <a href="https://uc-vrn.ru/" target="_blank" rel="noopener">https://uc-vrn.ru/</a>, а также для отслеживания переходов и действий внутри Сайта используются сторонние технологии, такие как:
 		</p>
 		<ul>
-			<li><a href="https://mc.yandex.ru/" target="_blank" rel="noopener">https://mc.yandex.ru/</a>, <a href="https://mc.yandex.com/" target="_blank" rel="noopener">https://mc.yandex.com/</a> — сервис Яндекс.Метрики; используется для сбора и анализа статистики посещений, действий пользователей и достижения целей;</li>
-			<li><a href="https://prime-ltd.su/" target="_blank" rel="noopener">https://prime-ltd.su/</a> — агентство «Прайм»; SEO-сопровождение, обезличенная аналитика посещаемости;</li>
+			<li>ООО «Яндекс» (ИНН 7736207543), сервисы <a href="https://mc.yandex.ru/" target="_blank" rel="noopener">https://mc.yandex.ru/</a>, <a href="https://mc.yandex.com/" target="_blank" rel="noopener">https://mc.yandex.com/</a> — Яндекс.Метрика; сбор и анализ статистики посещений, действий пользователей и достижения целей;</li>
+			<li>агентство «Прайм» (сайт <a href="https://prime-ltd.su/" target="_blank" rel="noopener">https://prime-ltd.su/</a>) — SEO-сопровождение, обезличенная аналитика посещаемости;</li>
 		</ul>
 		<p>
 			Сведения о действиях пользователей веб-сайта обрабатываются для совершенствования продуктов и услуг АНО ДПО, определения предпочтений пользователя, предоставления целевой информации по продуктам и услугам, анализа и настройки рекламы.
@@ -68,7 +68,7 @@ $APPLICATION->SetTitle("Правила применения рекомендат
 			8. Юридически значимые сообщения по вопросам применения рекомендательных технологий могут быть направлены на адрес электронной почты АНО ДПО «ЦЧР УЧЕБНЫЙ ЦЕНТР»: <a href="mailto:uchcomb@mail.ru">uchcomb@mail.ru</a>.
 		</p>
 		<p>
-			9. Настоящие Правила действуют бессрочно до замены новой версией. Актуальная редакция размещается на Сайте по адресу <a href="/legal/recommenfation/">https://uc-vrn.ru/legal/recommendation/</a>.
+			9. Настоящие Правила действуют бессрочно до замены новой версией. Актуальная редакция размещается на Сайте по адресу <a href="/legal/recommendation/">https://uc-vrn.ru/legal/recommendation/</a>.
 		</p>
 		<div class="legal-doc__operator">
 			<h2>Контактная информация оператора</h2>
@@ -85,7 +85,7 @@ $APPLICATION->SetTitle("Правила применения рекомендат
 				Телефон: <a href="tel:+74732396669">+7 (473) 239-66-69</a>
 			</p>
 			<p>
-				E-mail: <a href="mailto:https://uc-vrn.ru/">https://uc-vrn.ru/</a>
+				E-mail: <a href="mailto:uchcomb@mail.ru">uchcomb@mail.ru</a>
 			</p>
 			<p>
 				394033 г. Воронеж, Ленинский пр-т, д. 119А, лит 5А, оф 141

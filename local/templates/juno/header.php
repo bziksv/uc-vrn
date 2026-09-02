@@ -30,6 +30,10 @@
         <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.maskedinput.min.js"); ?>
         <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.fancybox.min.js"); ?>
         <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/script.js"); ?>
+        <? if (function_exists('ucvrn_smartcaptcha_enabled') && ucvrn_smartcaptcha_enabled()): ?>
+            <script>window.UCVRN_SMARTCAPTCHA_SITEKEY = <?= json_encode(SMARTCAPTCHA_CLIENT_KEY) ?>;</script>
+            <script src="https://smartcaptcha.cloud.yandex.ru/captcha.js?render=onload&onload=onSmartCaptchaReady" defer></script>
+        <? endif; ?>
         <? $APPLICATION->ShowHead(); ?>
     </head>
     <body class="page">

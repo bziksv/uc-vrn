@@ -1,0 +1,33 @@
+---
+description: Композитный режим Bitrix — локалка выключена, динамические зоны размечать явно
+alwaysApply: true
+---
+
+# Композитный сайт Bitrix
+
+Локально композит **выключен**: `start-dev.sh` снимает `bitrix/html_pages/.enabled`. Не включать его на локалке — иначе правки шаблона «не видны» из‑за HTML-кеша.
+
+На проде композит допустим. Шаблон `juno` сейчас **не адаптирован** (`COMPOSITE_FRAME_*` нет).
+
+## При правках шаблона и компонентов
+
+Динамическое (формы, корзина/кабинет если появится, панель админа, баннер cookies, контент от `$_POST`/`$USER`) — не оставлять в статическом кадре.
+
+```php
+// динамическая зона с заглушкой
+$frame = new \Bitrix\Main\Composite\StaticArea();
+$frame->setStub('<div class="form-stub"></div>');
+$frame->startDynamicArea();
+require $_SERVER['DOCUMENT_ROOT'] . '/local/templates/juno/forms/askQuestion.php';
+$frame->finishDynamicArea();
+```
+
+В параметрах компонента:
+
+- `COMPOSITE_FRAME_MODE` = `Y` только если шаблон готов
+- формы и личные данные: `COMPOSITE_FRAME_TYPE` = `DYNAMIC_WITH_STUB` или `DYNAMIC_WITHOUT_STUB`
+- статичный контент (меню, карточки курсов без авторизации): `STATIC`
+
+## После деплоя на прод
+
+Если композит включён — сбросить `bitrix/html_pages/` (или «Очистить кеш» в админке). Не коммитить содержимое `html_pages/`.

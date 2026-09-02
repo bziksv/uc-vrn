@@ -1,0 +1,5 @@
+<?php
+// Скопировать в smartcaptcha.keys.php и вписать ключи из Yandex Cloud → SmartCaptcha.
+// В разрешённые домены добавить: uc-vrn.ru, www.uc-vrn.ru, 127.0.0.1, localhost
+define('SMARTCAPTCHA_CLIENT_KEY', '');
+define('SMARTCAPTCHA_SERVER_KEY', '');

@@ -17,6 +17,13 @@ if (!isset($_POST['agreement'])) {
     echo json_encode(array('success' => false, 'title' => 'Ошибка!', 'text' => 'Дайте согласие на обработку персональных данных!'));
     die();
 }
+if (function_exists('ucvrn_verify_smartcaptcha')) {
+    $captchaToken = isset($_POST['smart-token']) ? $_POST['smart-token'] : '';
+    if (!ucvrn_verify_smartcaptcha($captchaToken)) {
+        echo json_encode(array('success' => false, 'title' => 'Ошибка!', 'text' => 'Подтвердите, что вы не робот.'));
+        die();
+    }
+}
 // проверка капчи END
 // добавляем заявку в админку
 $msgObj = new CIBlockElement;

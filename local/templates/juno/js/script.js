@@ -1,3 +1,104 @@
+var pendingCaptchaForm = null;
+
+function resetSmartCaptchaWidget() {
+    var node = document.querySelector('.smart-captcha-modal .js-smart-captcha');
+    if (!node || !window.smartCaptcha || node.dataset.widgetId === undefined) {
+        return;
+    }
+    try {
+        window.smartCaptcha.reset(node.dataset.widgetId);
+    } catch (e) {}
+}
+
+function closeSmartCaptchaModal() {
+    pendingCaptchaForm = null;
+    if (window.jQuery) {
+        window.jQuery('.smart-captcha-modal').removeClass('is-open');
+    }
+}
+
+function attachSmartCaptchaToken(form, token) {
+    var input = form.find('input[name="smart-token"]');
+    if (!input.length) {
+        input = window.jQuery('<input type="hidden" name="smart-token">').appendTo(form);
+    }
+    input.val(token);
+}
+
+function onSmartCaptchaSolved(token) {
+    var form = pendingCaptchaForm;
+    if (!form || !form.length || !token) {
+        return;
+    }
+    attachSmartCaptchaToken(form, token);
+    pendingCaptchaForm = null;
+    window.jQuery('.smart-captcha-modal').removeClass('is-open');
+    form.trigger('submit');
+}
+
+function renderSmartCaptchaModal() {
+    if (!window.smartCaptcha || !window.UCVRN_SMARTCAPTCHA_SITEKEY || !window.jQuery) {
+        return;
+    }
+    var node = document.querySelector('.smart-captcha-modal .js-smart-captcha');
+    if (!node || node.dataset.widgetId) {
+        resetSmartCaptchaWidget();
+        return;
+    }
+    try {
+        var widgetId = window.smartCaptcha.render(node, {
+            sitekey: window.UCVRN_SMARTCAPTCHA_SITEKEY,
+            hl: 'ru',
+            callback: onSmartCaptchaSolved
+        });
+        if (widgetId !== undefined && widgetId !== null) {
+            node.dataset.widgetId = widgetId;
+        }
+    } catch (e) {
+        console.warn('SmartCaptcha render failed', e);
+    }
+}
+
+function openSmartCaptchaModal(form) {
+    pendingCaptchaForm = form;
+    window.jQuery('.smart-captcha-modal').addClass('is-open');
+    renderSmartCaptchaModal();
+}
+
+function setAgreementError(form, show) {
+    var label = form.find('label[for^="agreement"]');
+    var err = form.find('.agreement-error');
+    if (!err.length) {
+        err = window.jQuery(
+            '<div class="agreement-error" role="alert">' +
+                '<div class="agreement-error__card">' +
+                    '<div class="agreement-error__title">Нужно ваше согласие</div>' +
+                    '<div class="agreement-error__text">Отметьте пункт, чтобы отправить заявку</div>' +
+                '</div>' +
+            '</div>'
+        );
+        label.prepend(err);
+    }
+    if (show) {
+        label.removeClass('is-error');
+        void label[0].offsetWidth;
+        label.addClass('is-error');
+        err.addClass('is-visible');
+        if (label[0] && label[0].scrollIntoView) {
+            label[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    } else {
+        label.removeClass('is-error');
+        err.removeClass('is-visible');
+    }
+}
+
+window.onSmartCaptchaReady = function () {
+    if (pendingCaptchaForm) {
+        renderSmartCaptchaModal();
+    }
+};
+
 $(document).ready(function () {
 
     $(".main-news_slider").slick({
@@ -26,25 +127,10 @@ $(document).ready(function () {
         ]
 
     });
-    let agrees = $('input[type="checkbox"]');
-    agrees.click(function () {
-        agrees.each(function () {
-            if ($(this).is(':checked')) {
-                let form = $(this).closest('form');
-                let btn = form.find('button');
-                btn.removeAttr('disabled');
-                btn.removeClass('disabled');
-                let lbl = $(this).prev('label');
-                lbl.addClass('checked');
-            } else {
-                let form = $(this).closest('form');
-                let btn = form.find('button');
-                btn.attr('disabled', 'disabled');
-                let lbl = $(this).prev('label');
-                lbl.removeClass('checked');
-                btn.addClass('disabled');
-            }
-        });
+    $(document).on('change', 'form.send_mail_raba input[name="agreement"]', function () {
+        if (this.checked) {
+            setAgreementError($(this).closest('form'), false);
+        }
     });
 
     $('.custom-selector_header').click(function () {
@@ -168,6 +254,7 @@ $(document).ready(function () {
     }
     $(".response_close").on('click', closeForm);
     $(".response_close_cros").on('click', closeForm);
+    $(document).on('click', '.js-smart-captcha-close', closeSmartCaptchaModal);
     // типа капча
     $(".send_mail_raba input").on('click', (function () {
         $(".send_mail_raba .clickField").val("click_true");
@@ -179,14 +266,29 @@ $(document).ready(function () {
     // отправка записи на заселение --------------------------------------------
     $("form.send_mail_raba").submit(function (e) {
         e.preventDefault();
+        var form = $(this);
+        if (!form.find('input[name="agreement"]').is(':checked')) {
+            setAgreementError(form, true);
+            return;
+        }
+        setAgreementError(form, false);
+        if (window.UCVRN_SMARTCAPTCHA_SITEKEY && $('.smart-captcha-modal').length) {
+            var token = form.find('input[name="smart-token"]').val();
+            if (!token) {
+                openSmartCaptchaModal(form);
+                return;
+            }
+        }
         $('.preloader').addClass('active');
-        var form = $(this), data = new FormData(this);
+        var data = new FormData(this);
         $.ajax({
             type: 'POST', url: '/local/templates/juno/forms/ajax_sendForm.php',
             data: data,
             cache: false, contentType: false, processData: false, mimeType: "multipart/form-data", dataType: "json",
             success: function (msg) {
                 $('.preloader').removeClass('active');
+                form.find('input[name="smart-token"]').remove();
+                resetSmartCaptchaWidget();
                 $('.fancybox-close-small').trigger('click');
                 // показываем сообщение
                 $(".response .response_title").html(msg.title);
@@ -201,6 +303,8 @@ $(document).ready(function () {
             },
             error: function (xhr, str) {
                 $('.preloader').removeClass('active');
+                form.find('input[name="smart-token"]').remove();
+                resetSmartCaptchaWidget();
                 console.log('error');
                 console.log(xhr);
                 console.log(str);
